@@ -1,0 +1,24 @@
+{
+  "name": "tp0is2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "connectDB.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoL0pez/TP0IS2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscoL0pez/TP0IS2/issues"
+  },
+  "homepage": "https://github.com/franciscoL0pez/TP0IS2#readme",
+  "dependencies": {
+    "mongoose": "^8.12.1"
+  }
+}
