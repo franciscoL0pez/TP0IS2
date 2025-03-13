@@ -61,14 +61,17 @@ module.exports = router;
 router.get("/courses/:id", async (req, res) => {
     try {
         const { id } = req.params;
-       
+
 
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(404).json(createErrorResponse(0, "Bad Request", "Invalid course ID"));
         }
 
         const course = await courseSchema.findById(id);
-    
+
+        if (!course) {
+            return res.status(404).json(createErrorResponse(404, "Not Found", "Course not found"));
+        }
 
         res.status(200).json({
             data: {
@@ -84,6 +87,34 @@ router.get("/courses/:id", async (req, res) => {
 });
 
 // delete course by id
+router.delete("/courses/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        // invalid id
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(404).json(createErrorResponse(0, "Bad Request", "Invalid course ID"));
+        }
+
+        // search if id exists in db
+        const course = await courseSchema.findById(id);
+        if (!course) {
+            return res.status(404).json(createErrorResponse(0, "Not Found", "Course not found"));
+        }
+
+        const deletedCourse = await courseSchema.deleteOne({ _id: id });
+
+   
+   
+        res.status(204).json({});
+
+    } catch (err) {
+        res.status(500).json(createErrorResponse(0, "Internal Server Error", err.message));
+    }
+});
+
+
+/*
 router.delete("/courses/:id", (req, res) => {
     const { id } = req.params;
     courseSchema
@@ -93,4 +124,6 @@ router.delete("/courses/:id", (req, res) => {
 });
 
 
+
 module.exports = router;
+*/
