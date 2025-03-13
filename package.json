@@ -1,10 +1,16 @@
 {
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
   "name": "tp0is2",
-  "version": "1.0.0",
   "description": "",
-  "main": "connectDB.js",
-  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
+    "start":"nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,8 +23,5 @@
   "bugs": {
     "url": "https://github.com/franciscoL0pez/TP0IS2/issues"
   },
-  "homepage": "https://github.com/franciscoL0pez/TP0IS2#readme",
-  "dependencies": {
-    "mongoose": "^8.12.1"
-  }
+  "homepage": "https://github.com/franciscoL0pez/TP0IS2#readme"
 }
