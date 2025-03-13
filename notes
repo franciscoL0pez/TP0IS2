@@ -5,3 +5,4 @@
 4- instalar nodemon: npm i nodemon -D
 5- instalar mongoose: npm i mongoose
 6- instalar dotenv: npm i dotenv
+7- test client en vscode para probar los endpoints
