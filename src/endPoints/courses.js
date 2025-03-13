@@ -31,13 +31,40 @@ router.post("/courses", async (req, res) => {
 
   
 
-// get all courses
+// get all courses 
+router.get("/courses", async (req, res) => {
+    try {
+      const courses = await courseSchema.find();
+  
+      if (courses.length === 0) {
+        return res.status(404).json(createErrorResponse(404, "Not Found", "No courses available"));
+      }
+  
+      res.status(200).json({
+        data: courses.map(course => ({
+          id: course._id,
+          title: course.title,
+          description: course.description
+        }))
+      });
+  
+    } catch (err) {
+      res.status(500).json(createErrorResponse(500, "Internal Server Error", err.message));
+    }
+  });
+  
+  module.exports = router;
+
+
+
+/*
 router.get("/courses", (req, res) => {
     courseSchema
     .find()
     .then((data) => res.json(data))
     .catch((err) => res.json({ message: err }));
 });
+*/
 
 // get course by id
 router.get("/courses/:id", (req, res) => {
