@@ -6,3 +6,7 @@ content-type: application/json
     "courseName": "Course about python",
     "description": "This course is about python programming language"
 }
+
+###
+// get all courses 
+GET http://localhost:8080/api/courses HTTP/1.1

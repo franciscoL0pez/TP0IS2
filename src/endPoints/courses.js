@@ -13,4 +13,12 @@ router.post("/courses", (req, res) => {
     .catch((err) => res.json({ message: err }));
 });
 
+// get all courses
+router.get("/courses", (req, res) => {
+    courseSchema
+    .find()
+    .then((data) => res.json(data))
+    .catch((err) => res.json({ message: err }));
+});
+
 module.exports = router;
