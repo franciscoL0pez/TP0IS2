@@ -21,4 +21,13 @@ router.get("/courses", (req, res) => {
     .catch((err) => res.json({ message: err }));
 });
 
+// get course by id
+router.get("/courses/:id", (req, res) => {
+    const {id} = req.params;
+    courseSchema
+    .findById(id)
+    .then((data) => res.json(data))
+    .catch((err) => res.json({ message: err }));
+});
+
 module.exports = router;
