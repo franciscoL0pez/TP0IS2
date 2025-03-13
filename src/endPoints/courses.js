@@ -30,4 +30,15 @@ router.get("/courses/:id", (req, res) => {
     .catch((err) => res.json({ message: err }));
 });
 
+
+// delete course by id
+router.delete("/courses/:id", (req, res) => {
+    const {id} = req.params;
+    courseSchema
+    .deleteOne({ _id : id})
+    .then((data) => res.json(data))
+    .catch((err) => res.json({ message: err }));
+});
+
+
 module.exports = router;

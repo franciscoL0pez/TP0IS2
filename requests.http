@@ -14,3 +14,7 @@ GET http://localhost:8080/api/courses HTTP/1.1
 ###
 // get course by id
 GET http://localhost:8080/api/courses/67d2e05faa7ccf87020d2db4 HTTP/1.1
+
+###
+// delete course by id
+DELETE http://localhost:8080/api/courses/67d2fa52164cc9956950bb1e HTTP/1.1
