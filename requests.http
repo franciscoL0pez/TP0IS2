@@ -3,7 +3,7 @@ POST http://localhost:8080/api/courses HTTP/1.1
 content-type: application/json
 
 {
-    "courseName": "Course about python",
+    "title": "",
     "description": "This course is about python programming language"
 }
 
@@ -13,8 +13,8 @@ GET http://localhost:8080/api/courses HTTP/1.1
 
 ###
 // get course by id
-GET http://localhost:8080/api/courses/67d2e05faa7ccf87020d2db4 HTTP/1.1
+GET http://localhost:8080/api/courses/67331989d439a57ec008e1 HTTP/1.1
 
 ###
 // delete course by id
-DELETE http://localhost:8080/api/courses/67d2fa52164cc9956950bb1e HTTP/1.1
+DELETE http://localhost:8080/api/courses/67d32a71cbcab9059d754e92 HTTP/1.1

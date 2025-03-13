@@ -1,5 +1,5 @@
 const createErrorResponse = (status, title, detail, instance = "/courses") => ({
-    type: `https://httpstatuses.com/${status}`,
+    type: 'String',
     title,
     status,
     detail,
