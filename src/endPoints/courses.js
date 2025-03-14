@@ -11,7 +11,7 @@ router.post("/courses", async (req, res) => {
     const { title, description } = req.body;
 
     if (!title || !description) {
-      logger.error("Title and description are required");
+      logger.error("Course creation failed. Title and description are mandatory");
       return res
         .status(400)
         .json(
@@ -70,7 +70,7 @@ router.get("/courses", async (req, res) => {
         );
     }
 
-    logger.info("Courses retrieved");
+    logger.info("Successfully retrieved all courses");
 
     res.status(200).json({
       data: courses.map((course) => ({
@@ -101,7 +101,7 @@ router.get("/courses/:id", async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      logger.error(`Invalid ID: ${id}`);
+      logger.error(`Invalid course ID: ${id}`);
       return res
         .status(404)
         .json(
@@ -160,7 +160,7 @@ router.delete("/courses/:id", async (req, res) => {
 
     // invalid id
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      logger.error(`Invalid ID: ${id}`);
+      logger.error(`Invalid course ID: ${id}`);
       return res
         .status(404)
         .json(
@@ -189,6 +189,7 @@ router.delete("/courses/:id", async (req, res) => {
         );
     }
 
+    logger.info(`Course deleted, id: ${id}`);
     const deletedCourse = await courseSchema.deleteOne({ _id: id });
 
     res.status(204).json({});
