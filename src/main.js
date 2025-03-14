@@ -1,26 +1,30 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const courseRoutes = require("./routes/courseRoutes");
 
-const coursesRoutes = require("./endPoints/courses");
 const app = express();
-const port = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
-//middleware
+// Middleware
 app.use(express.json());
-app.use("/api", coursesRoutes);
 
-//routes
+// routes
+app.use("/api", courseRoutes);
+
 app.get("/", (req, res) => {
-  res.send("Welcome to my api");
+  res.send("Welcome to my API");
 });
 
-//mongo db connection
+// connet to mongo and start server (in the future can i divide this in two files)
 mongoose
   .connect(process.env.MONGODB_URI)
-  .then(() => console.log("DB connected"))
-  .catch((err) => console.log(err));
-
-app.listen(port, () => {
-  console.log("Server is running on port", port);
-});
+  .then(() => {
+    console.log("Connected to MongoDB");
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("Database connection error:", err);
+  });
