@@ -10,7 +10,7 @@ router.post("/courses", async (req, res) => {
         const { title, description } = req.body;
 
         if (!title || !description) {
-            return res.status(400).json(createErrorResponse(0, "Bad Request", "Title and description are required"));
+            return res.status(400).json(createErrorResponse(400, "Bad Request", "Title and description are required", "/courses"));
         }
 
         const course = new courseSchema({ title, description });
@@ -25,7 +25,9 @@ router.post("/courses", async (req, res) => {
         });
 
     } catch (err) {
-        res.status(500).json(createErrorResponse(0, "Internal Server Error", err.message));
+        res.status(500).json(createErrorResponse(500, "Internal Server Error", "An unexpected error occurred while processing your request.",
+            "/courses"
+        ));
     }
 });
 
@@ -37,7 +39,7 @@ router.get("/courses", async (req, res) => {
         const courses = await courseSchema.find();
 
         if (courses.length === 0) {
-            return res.status(404).json(createErrorResponse(404, "Not Found", "No courses available"));
+            return res.status(404).json(createErrorResponse(404, "Course Not Found", "No courses available", "/courses"));
         }
 
         res.status(200).json({
@@ -49,7 +51,9 @@ router.get("/courses", async (req, res) => {
         });
 
     } catch (err) {
-        res.status(500).json(createErrorResponse(500, "Internal Server Error", err.message));
+        res.status(500).json(createErrorResponse(500, "Internal Server Error", "An unexpected error occurred while processing your request.",
+            "/courses"
+        ));
     }
 });
 
@@ -64,13 +68,14 @@ router.get("/courses/:id", async (req, res) => {
 
 
         if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(404).json(createErrorResponse(0, "Bad Request", "Invalid course ID"));
+            return res.status(404).json(createErrorResponse(400, "Bad Request", `The ID ${id} is invalid.`, `/courses/${id}`));
         }
 
         const course = await courseSchema.findById(id);
 
         if (!course) {
-            return res.status(404).json(createErrorResponse(404, "Not Found", "Course not found"));
+            const id = req.params.id;
+            return res.status(404).json(createErrorResponse(404, "Course not found", `The course with ID ${id} was not found.`, `/courses/${id}`));
         }
 
         res.status(200).json({
@@ -82,7 +87,9 @@ router.get("/courses/:id", async (req, res) => {
         });
 
     } catch (err) {
-        res.status(500).json(createErrorResponse(500, "Internal Server Error", err.message));
+        res.status(500).json(createErrorResponse(500, "Internal Server Error", "An unexpected error occurred while processing your request.",
+            "/courses"
+        ));
     }
 });
 
@@ -93,37 +100,29 @@ router.delete("/courses/:id", async (req, res) => {
 
         // invalid id
         if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(404).json(createErrorResponse(0, "Bad Request", "Invalid course ID"));
+            return res.status(404).json(createErrorResponse(400, "Bad Request", `The ID ${id} is invalid.`, `/courses/${id}`));
         }
 
         // search if id exists in db
         const course = await courseSchema.findById(id);
         if (!course) {
-            return res.status(404).json(createErrorResponse(0, "Not Found", "Course not found"));
+            return res.status(404).json(createErrorResponse(404, "Course Not Found", `The course with ID ${id} was not found.`, `/courses/${id}`));
         }
 
         const deletedCourse = await courseSchema.deleteOne({ _id: id });
 
-   
-   
         res.status(204).json({});
 
     } catch (err) {
-        res.status(500).json(createErrorResponse(0, "Internal Server Error", err.message));
+        res.status(500).json(createErrorResponse(500, "Internal Server Error", "An unexpected error occurred while processing your request.",
+            "/courses"
+        ));
     }
 });
 
 
-/*
-router.delete("/courses/:id", (req, res) => {
-    const { id } = req.params;
-    courseSchema
-        .deleteOne({ _id: id })
-        .then((data) => res.json(data))
-        .catch((err) => res.json({ message: err }));
-});
+
 
 
 
 module.exports = router;
-*/

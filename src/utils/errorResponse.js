@@ -1,5 +1,5 @@
-const createErrorResponse = (status, title, detail, instance = "/courses") => ({
-    type: 'String',
+const createErrorResponse = (status, title, detail, instance ) => ({
+    type: 'about:blank',
     title,
     status,
     detail,
