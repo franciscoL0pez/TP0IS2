@@ -14,7 +14,8 @@ const getCourseById = async (id) => {
 };
 
 const deleteCourseById = async (id) => {
-  return await Course.deleteOne({ _id: id });
+  const result = await Course.deleteOne({ _id: id });
+  return result.deletedCount > 0; // Retorna true si se eliminó un curso
 };
 
 module.exports = { createCourse, getAllCourses, getCourseById, deleteCourseById };

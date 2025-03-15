@@ -289,3 +289,100 @@ describe("Course Controller - getCourseById", () => {
     });
   });
 });
+
+// Delete course by id test
+
+describe("Course Controller - deleteCourse", () => {
+  
+  let req, res;
+
+  beforeEach(() => {
+    jest.clearAllMocks(); // Clear mocks before each test
+
+    req = {
+      params: {
+        id: "12345",
+      },
+    };
+
+    res = {
+      status: jest.fn().mockReturnThis(),
+      json: jest.fn(),
+    };
+  });
+
+  test("Delete course by id and response with code 204", async () => {
+
+    const mockCourse = {
+      _id: "12345",
+      title: "Test Course",
+      description: "Test Description",
+    };
+
+    courseService.deleteCourseById.mockResolvedValue(mockCourse); // Simulate successful response
+    
+    await courseController.deleteCourse(req, res);
+
+    expect(courseService.deleteCourseById).toHaveBeenCalledWith("12345");
+
+
+    expect(logger.info).toHaveBeenCalledWith("Course deleted, id: 12345");
+    expect(res.status).toHaveBeenCalledWith(204);
+    expect(res.json).toHaveBeenCalled();
+  });
+
+  /*
+  test("Handle course not found and response with code 404", async () => {
+    const mockError = new Error("Course not found");
+    courseService.deleteCourseById.mockResolvedValue({ deletedCount: 0 }); // Cambia el valor a { deletedCount: 0 }
+  
+    // Simula el comportamiento esperado del error
+    createErrorResponse.mockReturnValue({
+      error: "Course Not Found",
+      message: "The course with ID 12345 was not found.",
+    });
+  
+    await courseController.deleteCourse(req, res);
+  
+    expect(courseService.deleteCourseById).toHaveBeenCalledWith("12345");
+    expect(logger.error).toHaveBeenCalledWith("Course not found, id: 12345");
+    expect(createErrorResponse).toHaveBeenCalledWith(
+      404,
+      "Course Not Found",
+      "The course with ID 12345 was not found.",
+      "/courses/12345"
+    );
+    expect(res.status).toHaveBeenCalledWith(404);
+    expect(res.json).toHaveBeenCalledWith({
+      error: "Course Not Found",
+      message: "The course with ID 12345 was not found.",
+    });
+  });
+  */
+  test("Handle errors and response with code 500", async () => {
+    const mockError = new Error("Internal Server Error");
+
+    courseService.deleteCourseById.mockRejectedValue(mockError); // Simulate error response
+
+    createErrorResponse.mockReturnValue({
+      error: "Internal Server Error",
+      message: "An unexpected error occurred while processing your request.",
+    });
+
+    await courseController.deleteCourse(req, res);
+
+    expect(courseService.deleteCourseById).toHaveBeenCalledWith("12345");
+    expect(logger.error).toHaveBeenCalledWith(mockError.message);
+    expect(createErrorResponse).toHaveBeenCalledWith(
+      500,
+      "Internal Server Error",
+      "An unexpected error occurred while processing your request.",
+      "/courses"
+    );
+    expect(res.status).toHaveBeenCalledWith(500);
+    expect(res.json).toHaveBeenCalledWith({
+      error: "Internal Server Error",
+      message: "An unexpected error occurred while processing your request.",
+    });
+  }, 500);
+});

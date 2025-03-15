@@ -80,6 +80,7 @@ const deleteCourse = async (req, res) => {
     const deletedCourse = await courseService.deleteCourseById(id);
 
     if (!deletedCourse) {
+      
       logger.error(`Course not found, id: ${id}`);
       return res.status(404).json(createErrorResponse(404, 'Course Not Found', `The course with ID ${id} was not found.`, `/courses/${id}`));
     }
