@@ -37,8 +37,7 @@ describe("Course Controller - createCourse", () => {
       description: "Test Description",
     };
 
-    courseService.createCourse.mockResolvedValue(mockCourse); // Simula respuesta exitosa
-
+    courseService.createCourse.mockResolvedValue(mockCourse); // Simulate successful response
     await courseController.createCourse(req, res);
 
     expect(courseService.createCourse).toHaveBeenCalledWith({
@@ -194,4 +193,99 @@ describe("Course Controller - getCourses", () => {
   });
 });
 
+// Get course by id test
 
+describe("Course Controller - getCourseById", () => {
+
+  let req, res;
+
+  beforeEach(() => {
+    jest.clearAllMocks(); // Clear mocks before each test
+
+    req = {
+      params: {
+        id: "12345",
+      },
+    };
+
+    res = {
+      status: jest.fn().mockReturnThis(),
+      json: jest.fn(),
+    };
+  });
+
+  test("Get course by id and response with code 200", async () => {
+    const mockCourse = {
+      _id: "12345",
+      title: "Test Course",
+      description: "Test Description",
+    };
+
+    courseService.getCourseById.mockResolvedValue(mockCourse); // Simulate successful response
+
+    await courseController.getCourseById(req, res);
+
+    expect(courseService.getCourseById).toHaveBeenCalledWith("12345");
+    expect(logger.info).toHaveBeenCalledWith(`Course found, id: ${mockCourse._id}`);
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith({
+      data: {
+        id: "12345",
+        title: "Test Course",
+        description: "Test Description",
+      },
+    });
+  });
+
+  test("Handle course not found and response with code 404", async () => {
+    courseService.getCourseById.mockResolvedValue(null); // Simulate empty response
+
+    createErrorResponse.mockReturnValue({
+      error: "Course Not Found",
+      message: "The course with ID 12345 was not found.",
+    });
+
+    await courseController.getCourseById(req, res);
+
+    expect(courseService.getCourseById).toHaveBeenCalledWith("12345");
+    expect(logger.error).toHaveBeenCalledWith("Course not found, id: 12345");
+    expect(createErrorResponse).toHaveBeenCalledWith(
+      404,
+      "Course Not Found",
+      "The course with ID 12345 was not found.",
+      "/courses/12345"
+    );
+    expect(res.status).toHaveBeenCalledWith(404);
+    expect(res.json).toHaveBeenCalledWith({
+      error: "Course Not Found",
+      message: "The course with ID 12345 was not found.",
+    });
+  });
+
+  test("Handle errors and response with code 500", async () => {
+    const mockError = new Error("Internal Server Error");
+
+    courseService.getCourseById.mockRejectedValue(mockError); // Simulate error response
+
+    createErrorResponse.mockReturnValue({
+      error: "Internal Server Error",
+      message: "An unexpected error occurred while processing your request.",
+    });
+
+    await courseController.getCourseById(req, res);
+
+    expect(courseService.getCourseById).toHaveBeenCalledWith("12345");
+    expect(logger.error).toHaveBeenCalledWith(mockError.message);
+    expect(createErrorResponse).toHaveBeenCalledWith(
+      500,
+      "Internal Server Error",
+      "An unexpected error occurred while processing your request.",
+      "/courses"
+    );
+    expect(res.status).toHaveBeenCalledWith(500);
+    expect(res.json).toHaveBeenCalledWith({
+      error: "Internal Server Error",
+      message: "An unexpected error occurred while processing your request.",
+    });
+  });
+});
