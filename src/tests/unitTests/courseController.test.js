@@ -5,12 +5,12 @@ const courseService = require("../../services/courseService");
 const createErrorResponse = require("../../utils/errorResponse");
 const logger = require("../../utils/logger");
 
-// Mocks
+
 jest.mock("../../services/courseService");
 jest.mock("../../utils/errorResponse");
 jest.mock("../../utils/logger");
 
-// Create a course tests
+
 describe("Course Controller - createCourse", () => {
   let req, res;
 
@@ -88,7 +88,7 @@ describe("Course Controller - createCourse", () => {
   });
 });
 
-// Get all courses tests
+
 describe("Course Controller - getCourses", () => {
   let req, res;
 
@@ -195,7 +195,6 @@ describe("Course Controller - getCourses", () => {
   });
 });
 
-// Get course by id test
 
 describe("Course Controller - getCourseById", () => {
   let req, res;
@@ -293,7 +292,6 @@ describe("Course Controller - getCourseById", () => {
   });
 });
 
-// Delete course by id test
 
 describe("Course Controller - deleteCourse", () => {
   let req, res;
