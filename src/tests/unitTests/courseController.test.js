@@ -6,8 +6,8 @@ const createErrorResponse = require("../../utils/errorResponse");
 const logger = require("../../utils/logger");
 
 // Mocks
-jest.mock("../../services/courseService"); 
-jest.mock("../../utils/errorResponse"); 
+jest.mock("../../services/courseService");
+jest.mock("../../utils/errorResponse");
 jest.mock("../../utils/logger");
 
 // Create a course tests
@@ -122,7 +122,9 @@ describe("Course Controller - getCourses", () => {
     await courseController.getCourses(req, res);
 
     expect(courseService.getAllCourses).toHaveBeenCalled();
-    expect(logger.info).toHaveBeenCalledWith("Successfully retrieved all courses");
+    expect(logger.info).toHaveBeenCalledWith(
+      "Successfully retrieved all courses"
+    );
     expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith({
       data: [
@@ -196,7 +198,6 @@ describe("Course Controller - getCourses", () => {
 // Get course by id test
 
 describe("Course Controller - getCourseById", () => {
-
   let req, res;
 
   beforeEach(() => {
@@ -226,7 +227,9 @@ describe("Course Controller - getCourseById", () => {
     await courseController.getCourseById(req, res);
 
     expect(courseService.getCourseById).toHaveBeenCalledWith("12345");
-    expect(logger.info).toHaveBeenCalledWith(`Course found, id: ${mockCourse._id}`);
+    expect(logger.info).toHaveBeenCalledWith(
+      `Course found, id: ${mockCourse._id}`
+    );
     expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith({
       data: {
@@ -293,7 +296,6 @@ describe("Course Controller - getCourseById", () => {
 // Delete course by id test
 
 describe("Course Controller - deleteCourse", () => {
-  
   let req, res;
 
   beforeEach(() => {
@@ -312,7 +314,6 @@ describe("Course Controller - deleteCourse", () => {
   });
 
   test("Delete course by id and response with code 204", async () => {
-
     const mockCourse = {
       _id: "12345",
       title: "Test Course",
@@ -320,30 +321,26 @@ describe("Course Controller - deleteCourse", () => {
     };
 
     courseService.deleteCourseById.mockResolvedValue(mockCourse); // Simulate successful response
-    
+
     await courseController.deleteCourse(req, res);
 
     expect(courseService.deleteCourseById).toHaveBeenCalledWith("12345");
-
 
     expect(logger.info).toHaveBeenCalledWith("Course deleted, id: 12345");
     expect(res.status).toHaveBeenCalledWith(204);
     expect(res.json).toHaveBeenCalled();
   });
 
-  /*
   test("Handle course not found and response with code 404", async () => {
-    const mockError = new Error("Course not found");
-    courseService.deleteCourseById.mockResolvedValue({ deletedCount: 0 }); // Cambia el valor a { deletedCount: 0 }
-  
-    // Simula el comportamiento esperado del error
+    courseService.deleteCourseById.mockResolvedValue(false); // Simulate a course not found (don't forget)
+
     createErrorResponse.mockReturnValue({
       error: "Course Not Found",
       message: "The course with ID 12345 was not found.",
     });
-  
+
     await courseController.deleteCourse(req, res);
-  
+
     expect(courseService.deleteCourseById).toHaveBeenCalledWith("12345");
     expect(logger.error).toHaveBeenCalledWith("Course not found, id: 12345");
     expect(createErrorResponse).toHaveBeenCalledWith(
@@ -358,7 +355,7 @@ describe("Course Controller - deleteCourse", () => {
       message: "The course with ID 12345 was not found.",
     });
   });
-  */
+
   test("Handle errors and response with code 500", async () => {
     const mockError = new Error("Internal Server Error");
 

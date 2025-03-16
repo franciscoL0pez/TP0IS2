@@ -78,7 +78,7 @@ const deleteCourse = async (req, res) => {
     const { id } = req.params;
 
     const deletedCourse = await courseService.deleteCourseById(id);
-
+    
     if (!deletedCourse) {
       
       logger.error(`Course not found, id: ${id}`);
@@ -87,6 +87,8 @@ const deleteCourse = async (req, res) => {
 
     logger.info(`Course deleted, id: ${id}`);
     res.status(204).json({});
+
+    
   } catch (err) {
     logger.error(err.message);
     res.status(500).json(createErrorResponse(500, 'Internal Server Error', 'An unexpected error occurred while processing your request.', '/courses'));
