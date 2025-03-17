@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const courseRoutes = require("./routes/courseRoutes");
 
+// connet to mongo and start server (in the future can i divide this in two files)
+
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -16,7 +19,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to my API");
 });
 
-// connet to mongo and start server (in the future can i divide this in two files)
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
