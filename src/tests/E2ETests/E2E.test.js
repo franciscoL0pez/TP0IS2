@@ -71,4 +71,31 @@ describe("E2E Tests - Course API", () => {
     expect(response.body.data.title).toBe("Node.js");
     expect(response.body.data.description).toBe("Learn Node.js");
   });
+
+  test("Get a course with id not found return 404", async () => {
+    const response = await request(app).get("/api/courses/67d331989d439a57e9c008e1");
+
+    expect(response.body).toEqual({
+      type: "about:blank",
+      title: "Course Not Found",
+      status: 404,
+      detail: "The course with ID 67d331989d439a57e9c008e1 was not found.",
+      instance: "/courses/67d331989d439a57e9c008e1",
+    });
+  });
+
+
+  test("Get a course with id invalid return 400", async () => {
+    const response = await request(app).get("/api/courses/123");
+
+    expect(response.body).toEqual({
+      type: "about:blank",
+      title: "Bad Request",
+      status: 400,
+      detail: "Invalid ID: 123",
+      instance: "/courses",
+    });
+
+
+  });
 });

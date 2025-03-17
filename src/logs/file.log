@@ -137,3 +137,14 @@
 2025-03-16 22:57:24 error: Title and description are required
 2025-03-16 22:57:24 info: Successfully retrieved all courses
 2025-03-16 22:57:24 info: Course found, id: 67d781840fa2e78529fc634a
+2025-03-17 10:46:19 error: Invalid ID: 123
+2025-03-17 10:46:35 error: Invalid ID: 123
+2025-03-17 10:47:15 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-17 10:47:37 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-17 10:51:25 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-17 10:51:53 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-17 10:52:13 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-17 10:52:20 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-17 10:53:19 error: Invalid ID: 123
+2025-03-17 10:53:42 error: Invalid ID: 123
+2025-03-17 10:54:04 error: Invalid ID: 123
