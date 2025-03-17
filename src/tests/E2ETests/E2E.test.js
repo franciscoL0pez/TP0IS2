@@ -73,7 +73,9 @@ describe("E2E Tests - Course API", () => {
   });
 
   test("Get a course with id not found return 404", async () => {
-    const response = await request(app).get("/api/courses/67d331989d439a57e9c008e1");
+    const response = await request(app).get(
+      "/api/courses/67d331989d439a57e9c008e1"
+    );
 
     expect(response.body).toEqual({
       type: "about:blank",
@@ -83,7 +85,6 @@ describe("E2E Tests - Course API", () => {
       instance: "/courses/67d331989d439a57e9c008e1",
     });
   });
-
 
   test("Get a course with id invalid return 400", async () => {
     const response = await request(app).get("/api/courses/123");
@@ -95,7 +96,45 @@ describe("E2E Tests - Course API", () => {
       detail: "Invalid ID: 123",
       instance: "/courses",
     });
+  });
+
+  test("Delete a course with id", async () => {
+
+    const courseCreated = await course.create({
+      title: "Node.js",
+      description: "Learn Node.js",
+    });
+
+    const response = await request(app).delete(`/api/courses/${courseCreated.id}`);
 
 
   });
+
+
+  test("Delete a course with id not found return 404", async () => {
+    const response = await request(app).delete(
+      "/api/courses/67d331989d439a57e9c008e1"
+    );
+
+    expect(response.body).toEqual({
+      type: "about:blank",
+      title: "Course Not Found",
+      status: 404,
+      detail: "The course with ID 67d331989d439a57e9c008e1 was not found.",
+      instance: "/courses/67d331989d439a57e9c008e1",
+    });
+  });
+
+  test("Delete a course with id invalid return 400", async () => {
+    const response = await request(app).delete("/api/courses/123");
+
+    expect(response.body).toEqual({
+      type: "about:blank",
+      title: "Bad Request",
+      status: 400,
+      detail: "Invalid ID: 123",
+      instance: "/courses",
+    });
+  });
+  
 });
