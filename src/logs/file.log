@@ -1,0 +1,139 @@
+2025-03-16 22:00:53 info: Course created: 67d77445a8bfef7e268611f4, Node.js
+2025-03-16 22:00:55 info: Course created: 67d77447c0c6f07ff530654a, Node.js
+2025-03-16 22:01:20 info: Course created: 67d77460c49d99c82097336d, Node.js
+2025-03-16 22:01:31 info: Course created: 67d7746bb2f24d10062441f3, Node.js
+2025-03-16 22:01:37 info: Course created: 67d77471184d1c35723ad18c, Node.js
+2025-03-16 22:01:44 info: Course created: 67d77478e3edcd475c33a9cc, Node.js
+2025-03-16 22:01:46 info: Course created: 67d7747a02ad5d847546ca7c, Node.js
+2025-03-16 22:02:45 info: Course created: 67d774b50b9f18a71bc4abba, Node.js
+2025-03-16 22:05:02 info: Course created: 67d7753ecdcb0e19c4c56c90, Node.js
+2025-03-16 22:05:04 info: Course created: 67d77540fea374e6f60f4adf, Node.js
+2025-03-16 22:05:09 info: Course created: 67d775451e4e5563db1e51f2, Node.js
+2025-03-16 22:05:11 info: Course created: 67d7754639b7a01bc49a1cc6, Node.js
+2025-03-16 22:06:40 info: Successfully retrieved all courses
+2025-03-16 22:06:45 info: Course found, id: 67d331989d439a57e9c008e1
+2025-03-16 22:06:48 error: Cast to ObjectId failed for value "67d331989d439a57e9c008e" (type string) at path "_id" for model "Courses"
+2025-03-16 22:10:21 info: Course created: 67d7767dd55e1e33e1af6135, Java script
+2025-03-16 22:10:26 error: Title and description are required
+2025-03-16 22:10:31 error: Course not found, id: 67d457a6710124f8128da2b0
+2025-03-16 22:10:33 error: Course not found, id: 67d457a6710124f8128da2b0
+2025-03-16 22:11:53 info: Course created: 67d776d933280fea46ec7596, Node.js
+2025-03-16 22:13:11 info: Course created: 67d777271b99c2d7c9fb29dc, Node.js
+2025-03-16 22:13:14 info: Course created: 67d7772abe0bd8e708abe98e, Node.js
+2025-03-16 22:13:58 info: Course created: 67d777568a3fdef4b76600c0, Node.js
+2025-03-16 22:14:01 error: Invalid ID: 67d331989d439a57e9c008e
+2025-03-16 22:14:14 info: Course created: 67d77766cbb3cbf6da808a0d, Node.js
+2025-03-16 22:14:17 info: Course created: 67d777697dbac133cf4da548, Node.js
+2025-03-16 22:14:24 info: Course created: 67d77770560c5bfeb459184e, Node.js
+2025-03-16 22:14:31 info: Course created: 67d777774482c55bb6b96a4d, Node.js
+2025-03-16 22:14:37 info: Course created: 67d7777de73d1cb809f1ecb0, Node.js
+2025-03-16 22:14:41 error: Invalid ID: 67d331989d439a57e9c008e
+2025-03-16 22:15:22 info: Course created: 67d777aa13f2b3d1eaac41de, Node.js
+2025-03-16 22:15:29 info: Course created: 67d777b1f9f35ab8cc619619, Node.js
+2025-03-16 22:15:57 error: Invalid ID: 67d457a6710124f8128da2b
+2025-03-16 22:16:00 error: Course not found, id: 67d457a6710124f8128da2b0
+2025-03-16 22:20:31 error: Course not found, id: 67d457a6710124f8128da2b0
+2025-03-16 22:22:02 info: Course created: 67d7793aeed78bce03004458, Node.js
+2025-03-16 22:22:14 info: Course created: 67d77946c28e1b2777522d61, Node.js
+2025-03-16 22:22:35 info: Course created: 67d7795bbe7ac6ecdcd113c0, Node.js
+2025-03-16 22:24:50 info: Course created: 67d779e27adb47c6bc1d0632, Node.js
+2025-03-16 22:24:50 error: Title and description are required
+2025-03-16 22:25:17 error: Title and description are required
+2025-03-16 22:25:40 info: Course created: 67d77a140581b7da33ba2b07, Node.js
+2025-03-16 22:25:40 error: Title and description are required
+2025-03-16 22:25:50 info: Course created: 67d77a1e6658ba0fa59c3cd7, Node.js
+2025-03-16 22:25:51 error: Title and description are required
+2025-03-16 22:25:53 info: Course created: 67d77a21a29938f49ac3ffb6, Node.js
+2025-03-16 22:25:53 error: Title and description are required
+2025-03-16 22:25:58 info: Course created: 67d77a26102de45fba3bdd31, Node.js
+2025-03-16 22:25:58 error: Title and description are required
+2025-03-16 22:26:03 info: Course created: 67d77a2b1c48806c5959cae6, Node.js
+2025-03-16 22:26:03 error: Title and description are required
+2025-03-16 22:26:05 info: Course created: 67d77a2dbe27ea43955ab23d, Node.js
+2025-03-16 22:26:05 error: Title and description are required
+2025-03-16 22:26:59 info: Course created: 67d77a631da8e43878c657d3, Node.js
+2025-03-16 22:26:59 error: Title and description are required
+2025-03-16 22:27:45 info: Course created: 67d77a9113c643b659788df9, Node.js
+2025-03-16 22:27:45 error: Title and description are required
+2025-03-16 22:27:52 info: Course created: 67d77a98f678953626528d1d, Node.js
+2025-03-16 22:27:52 error: Title and description are required
+2025-03-16 22:27:54 info: Course created: 67d77a9a104266546edb7316, Node.js
+2025-03-16 22:27:54 error: Title and description are required
+2025-03-16 22:28:01 info: Course created: 67d77aa1364d7ea60af20e9d, Node.js
+2025-03-16 22:28:01 error: Title and description are required
+2025-03-16 22:28:05 info: Course created: 67d77aa533f76db6c371851b, Node.js
+2025-03-16 22:28:05 error: Title and description are required
+2025-03-16 22:28:05 info: Successfully retrieved all courses
+2025-03-16 22:28:08 info: Course created: 67d77aa8c264fbdec218156d, Node.js
+2025-03-16 22:28:08 error: Title and description are required
+2025-03-16 22:28:08 info: Successfully retrieved all courses
+2025-03-16 22:28:36 info: Course created: 67d77ac417aeb900b51c1748, Node.js
+2025-03-16 22:28:37 error: Title and description are required
+2025-03-16 22:28:37 info: Successfully retrieved all courses
+2025-03-16 22:28:49 info: Course created: 67d77ad1a3780692e0316d39, Node.js
+2025-03-16 22:28:49 error: Title and description are required
+2025-03-16 22:28:49 info: Successfully retrieved all courses
+2025-03-16 22:28:51 info: Course created: 67d77ad376416c7a7f4be98e, Node.js
+2025-03-16 22:28:51 error: Title and description are required
+2025-03-16 22:28:51 info: Successfully retrieved all courses
+2025-03-16 22:28:55 info: Course created: 67d77ad74b104602cfec4d68, Node.js
+2025-03-16 22:28:55 error: Title and description are required
+2025-03-16 22:28:55 info: Successfully retrieved all courses
+2025-03-16 22:29:03 info: Course created: 67d77adf8199f2a9ef3c2245, Node.js
+2025-03-16 22:29:03 error: Title and description are required
+2025-03-16 22:29:03 info: Successfully retrieved all courses
+2025-03-16 22:29:36 info: Successfully retrieved all courses
+2025-03-16 22:30:04 info: Course created: 67d77b1cb6e973ab5231d716, Node.js
+2025-03-16 22:30:04 error: Title and description are required
+2025-03-16 22:30:04 info: Successfully retrieved all courses
+2025-03-16 22:30:39 info: Course created: 67d77b3fff696f29bb4f8e96, Node.js
+2025-03-16 22:30:39 error: Title and description are required
+2025-03-16 22:30:39 info: Successfully retrieved all courses
+2025-03-16 22:30:42 info: Course created: 67d77b42cc1b9ac6bf160a3e, Node.js
+2025-03-16 22:30:42 error: Title and description are required
+2025-03-16 22:30:42 info: Successfully retrieved all courses
+2025-03-16 22:32:54 info: Course created: 67d77bc67d17f0e16e8c488e, Node.js
+2025-03-16 22:32:54 error: Title and description are required
+2025-03-16 22:32:54 error: No courses available
+2025-03-16 22:33:06 info: Course created: 67d77bd2904f51b22321708d, Node.js
+2025-03-16 22:33:06 error: Title and description are required
+2025-03-16 22:33:06 info: Successfully retrieved all courses
+2025-03-16 22:33:16 info: Course created: 67d77bdc81338517b7477ad3, Node.js
+2025-03-16 22:33:16 error: Title and description are required
+2025-03-16 22:33:16 info: Successfully retrieved all courses
+2025-03-16 22:33:32 info: Course created: 67d77bec546e9405f1cfccb6, Node.js
+2025-03-16 22:33:32 error: Title and description are required
+2025-03-16 22:33:32 error: No courses available
+2025-03-16 22:33:43 info: Course created: 67d77bf7aa1b036edf325b46, Node.js
+2025-03-16 22:33:43 error: Title and description are required
+2025-03-16 22:33:43 info: Successfully retrieved all courses
+2025-03-16 22:33:46 info: Course created: 67d77bfaff663983452bc4d4, Node.js
+2025-03-16 22:33:46 error: Title and description are required
+2025-03-16 22:33:46 info: Successfully retrieved all courses
+2025-03-16 22:34:19 info: Course created: 67d77c1b322caabd533e53f7, Node.js
+2025-03-16 22:34:19 error: Title and description are required
+2025-03-16 22:34:19 info: Successfully retrieved all courses
+2025-03-16 22:34:23 info: Course created: 67d77c1f700ddd1ba160f1da, Node.js
+2025-03-16 22:34:23 error: Title and description are required
+2025-03-16 22:34:23 info: Successfully retrieved all courses
+2025-03-16 22:34:30 info: Course created: 67d77c26255030f91d26cfa0, Node.js
+2025-03-16 22:34:30 error: Title and description are required
+2025-03-16 22:34:30 info: Successfully retrieved all courses
+2025-03-16 22:34:41 info: Course created: 67d77c3173ef87f70a84a890, Node.js
+2025-03-16 22:34:41 error: Title and description are required
+2025-03-16 22:34:41 info: Successfully retrieved all courses
+2025-03-16 22:34:43 info: Course created: 67d77c337d42a68156c320f9, Node.js
+2025-03-16 22:34:43 error: Title and description are required
+2025-03-16 22:34:43 info: Successfully retrieved all courses
+2025-03-16 22:34:46 info: Course created: 67d77c366de6675bdd5ab031, Node.js
+2025-03-16 22:34:46 error: Title and description are required
+2025-03-16 22:34:46 info: Successfully retrieved all courses
+2025-03-16 22:34:46 info: Course found, id: 67d77c366de6675bdd5ab039
+2025-03-16 22:35:15 info: Course created: 67d77c5359bf834742fbe60e, Node.js
+2025-03-16 22:35:15 error: Title and description are required
+2025-03-16 22:35:15 info: Successfully retrieved all courses
+2025-03-16 22:35:15 info: Course found, id: 67d77c5359bf834742fbe616
+2025-03-16 22:57:24 info: Course created: 67d781840fa2e78529fc6342, Node.js
+2025-03-16 22:57:24 error: Title and description are required
+2025-03-16 22:57:24 info: Successfully retrieved all courses
+2025-03-16 22:57:24 info: Course found, id: 67d781840fa2e78529fc634a

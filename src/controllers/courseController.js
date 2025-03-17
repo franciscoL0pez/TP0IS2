@@ -51,6 +51,12 @@ const getCourses = async (req, res) => {
 const getCourseById = async (req, res) => {
   try {
     const { id } = req.params;
+  
+
+    if (!id.match(/^[0-9a-fA-F]{24}$/)) {
+      logger.error(`Invalid ID: ${id}`);
+      return res.status(400).json(createErrorResponse(400, 'Bad Request', `Invalid ID: ${id}`, '/courses'));
+    }
 
     const course = await courseService.getCourseById(id);
 
@@ -76,6 +82,12 @@ const getCourseById = async (req, res) => {
 const deleteCourse = async (req, res) => {
   try {
     const { id } = req.params;
+
+    if (!id.match(/^[0-9a-fA-F]{24}$/)) {
+      logger.error(`Invalid ID: ${id}`);
+      return res.status(400).json(createErrorResponse(400, 'Bad Request', `Invalid ID: ${id}`, '/courses'));
+    }
+
 
     const deletedCourse = await courseService.deleteCourseById(id);
     
