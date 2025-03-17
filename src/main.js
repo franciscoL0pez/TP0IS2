@@ -13,16 +13,27 @@ app.get("/", (req, res) => {
   res.send("Welcome to my API");
 });
 
-// Only connect to db and start server if not running tests
-// For effect jest set this env variable
+const {
+  DATABASE_HOST,
+  DATABASE_USER,
+  DATABASE_PASSWORD,
+
+} = process.env;
+
+const MONGODB_URI = `mongodb+srv://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/?retryWrites=true&w=majority&appName=Cluster0`;
+
+// Conectar a la base de datos y levantar el servidor solo si no estamos en entorno de test
 if (process.env.NODE_ENV !== "test") {
   mongoose
-    .connect(process.env.MONGODB_URI)
+    .connect(MONGODB_URI)
     .then(() => {
       console.log("Connected to MongoDB");
       app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     })
-    .catch((err) => console.error("Database connection error:", err));
+    .catch((err) => {
+      console.error("Database connection error:", err);
+      process.exit(1);
+    });
 }
 
-module.exports = { app, mongoose }; 
+module.exports = { app, mongoose };
