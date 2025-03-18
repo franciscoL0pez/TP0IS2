@@ -1,39 +1,16 @@
-const express = require("express");
-const mongoose = require("mongoose");
-require("dotenv").config();
-const courseRoutes = require("./routes/courseRoutes");
+const app = require("./config/server"); 
+const connectDB = require("./config/DBConnected");
 
-const app = express();
-const PORT = process.env.PORT || 8080;
-
-app.use(express.json());
-app.use("/api", courseRoutes);
-
-app.get("/", (req, res) => {
-  res.send("Welcome to my API");
-});
-
-const {
-  DATABASE_HOST,
-  DATABASE_USER,
-  DATABASE_PASSWORD,
-
-} = process.env;
-
-const MONGODB_URI = `mongodb+srv://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/?retryWrites=true&w=majority&appName=Cluster0`;
-
-// Conectar a la base de datos y levantar el servidor solo si no estamos en entorno de test
-if (process.env.NODE_ENV !== "test") {
-  mongoose
-    .connect(MONGODB_URI)
-    .then(() => {
-      console.log("Connected to MongoDB");
-      app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-    })
-    .catch((err) => {
-      console.error("Database connection error:", err);
-      process.exit(1);
+// Connect to the database and start the server
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT || 8080, () => {
+      console.log(`Server is running on port ${process.env.PORT || 8080}`);
     });
-}
+  })
+  .catch((err) => {
+    console.error("Database connection failed:", err);
+    process.exit(1);  
+  });
 
-module.exports = { app, mongoose };
+module.exports = { app };

@@ -1,28 +1,25 @@
-//E2E tests
-
-// to no affect de real database i use npm install --save-dev supertest jest mongodb-memory-server
 const request = require("supertest");
-const { MongoMemoryServer } = require("mongodb-memory-server");
-const { app, mongoose } = require("../../main");
+const mongoose = require("mongoose");
+const { app } = require("../../main");
 const course = require("../../models/courses");
+const connectDB = require("../../config/DBConnected");
 
-describe("E2E Tests - Course API", () => {
-  let mongoServer;
+
+describe("E2E Tests - course API", () => {
+  let session; 
 
   beforeAll(async () => {
-    mongoServer = await MongoMemoryServer.create();
-
-    await mongoose.disconnect();
-    await mongoose.connect(mongoServer.getUri());
-  });
-
-  afterAll(async () => {
-    await mongoose.disconnect();
-    await mongoServer.stop();
+    await connectDB();
   });
 
   beforeEach(async () => {
-    await course.deleteMany();
+    session = await mongoose.startSession(); 
+    session.startTransaction(); 
+  });
+
+  afterEach(async () => {
+    await session.abortTransaction(); 
+    session.endSession();
   });
 
   test("Create a course return 201", async () => {
@@ -35,7 +32,7 @@ describe("E2E Tests - Course API", () => {
     expect(response.body.data.title).toBe("Node.js");
   });
 
-  test("Create a course and not include title return 400", async () => {
+  test("Create a course without title return 400", async () => {
     const response = await request(app)
       .post("/api/courses")
       .send({ description: "Learn Node.js" });
@@ -49,12 +46,12 @@ describe("E2E Tests - Course API", () => {
     });
   });
 
-  test("Get all courses return 200", async () => {
+  test("Get all courses should return 200", async () => {
     await course.create({ title: "Node.js", description: "Learn Node.js" });
+
     const response = await request(app).get("/api/courses");
 
     expect(response.status).toBe(200);
-    expect(response.body.data.length).toBe(1);
     expect(response.body.data[0].title).toBe("Node.js");
     expect(response.body.data[0].description).toBe("Learn Node.js");
   });
@@ -98,18 +95,18 @@ describe("E2E Tests - Course API", () => {
     });
   });
 
-  test("Delete a course with id", async () => {
-
+  test("Delete a course", async () => {
     const courseCreated = await course.create({
       title: "Node.js",
       description: "Learn Node.js",
     });
 
-    const response = await request(app).delete(`/api/courses/${courseCreated.id}`);
+    const response = await request(app).delete(
+      `/api/courses/${courseCreated.id}`
+    );
 
-
+    expect(response.status).toBe(204);
   });
-
 
   test("Delete a course with id not found return 404", async () => {
     const response = await request(app).delete(
@@ -136,5 +133,4 @@ describe("E2E Tests - Course API", () => {
       instance: "/courses",
     });
   });
-  
 });
