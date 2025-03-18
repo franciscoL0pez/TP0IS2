@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const { DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD } = process.env;
+const { DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME } = process.env;
 
-const MONGODB_URI = `mongodb+srv://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/?retryWrites=true&w=majority&appName=Cluster0`;
+
+const MONGODB_URI = `mongodb://localhost:27017/${DATABASE_NAME}`;
 
 const connectDB = async () => {
   try {
