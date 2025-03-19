@@ -1,5 +1,4 @@
 1- Tecnologias: Node, JavaScript, mongoDB, express
-
 2- Instalar Node
 3- instalar express: npm install express
 4- instalar nodemon: npm i nodemon -D

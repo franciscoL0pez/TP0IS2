@@ -15,7 +15,7 @@ services:
       - .:/usr/src/app
 
     environment:
-      - NODE_ENV=production
+      - ENVIRONMENT=production
 
   mongo:
     container_name: mongodb

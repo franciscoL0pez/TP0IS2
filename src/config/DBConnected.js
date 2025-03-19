@@ -5,7 +5,7 @@ const {DATABASE_NAME, DATABASE_HOST,DATABASE_PORT } = process.env;
 
 
 const MONGODB_URI =
-  process.env.NODE_ENV === 'production'
+  process.env.ENVIRONMENT === 'production'
     ? `mongodb://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`
     : `mongodb://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`;
 

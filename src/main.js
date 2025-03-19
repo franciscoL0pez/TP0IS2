@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const fs = require('fs');
 
 
-const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
+const envFile = process.env.ENVIRONMENT === 'production' ? '.env.production' : '.env.development';
 
 
 if (fs.existsSync(envFile)) {
@@ -15,7 +15,7 @@ if (fs.existsSync(envFile)) {
 const app = require("./config/server"); 
 const connectDB = require("./config/DBConnected");
 
-console.log("The envioromente is:", process.env.NODE_ENV);
+console.log("The envioromente is:", process.env.ENVIRONMENT);
 connectDB();
 app.listen(process.env.PORT || 8080, () => {
   console.log(`Server is running on port ${process.env.PORT || 8080}`);
