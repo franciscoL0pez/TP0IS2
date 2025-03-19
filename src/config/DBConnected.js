@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const {DATABASE_NAME, DATABASE_HOST } = process.env;
 
-const MONGODB_URI = `mongodb://localhost:${DATABASE_HOST}/${DATABASE_NAME}`;
+const MONGODB_URI = `mongodb://mongo:${DATABASE_HOST}/${DATABASE_NAME}`;
 
 const connectDB = async () => {
   try {

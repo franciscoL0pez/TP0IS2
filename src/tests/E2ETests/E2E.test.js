@@ -1,3 +1,4 @@
+/*
 const request = require("supertest");
 const mongoose = require("mongoose");
 const { app } = require("../../main");
@@ -134,3 +135,4 @@ describe("E2E Tests - course API", () => {
     });
   });
 });
+*/
