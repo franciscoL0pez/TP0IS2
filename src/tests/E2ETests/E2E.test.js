@@ -12,6 +12,11 @@ describe("E2E Tests - course API", () => {
     await connectDB();
   });
 
+  afterAll(async () => {
+    await mongoose.connection.close();
+    app.close();
+  });
+
   beforeEach(async () => {
     session = await mongoose.startSession(); 
     session.startTransaction(); 
@@ -46,17 +51,19 @@ describe("E2E Tests - course API", () => {
     });
   });
 
-  test("Get all courses should return 200", async () => {
+  test("Creat a courses and Get all courses should return 200", async () => {
     await course.create({ title: "Node.js", description: "Learn Node.js" });
+    await course.create({ title: "React", description: "Learn React" });
 
     const response = await request(app).get("/api/courses");
 
     expect(response.status).toBe(200);
     expect(response.body.data[0].title).toBe("Node.js");
     expect(response.body.data[0].description).toBe("Learn Node.js");
+
   });
 
-  test("Get a course with id return 200", async () => {
+  test("Create and Get a course with id, return 200", async () => {
     const courseCreated = await course.create({
       title: "Node.js",
       description: "Learn Node.js",
@@ -95,7 +102,7 @@ describe("E2E Tests - course API", () => {
     });
   });
 
-  test("Delete a course", async () => {
+  test("Create and Delete a course", async () => {
     const courseCreated = await course.create({
       title: "Node.js",
       description: "Learn Node.js",
