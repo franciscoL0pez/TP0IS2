@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const {DATABASE_NAME, DATABASE_HOST } = process.env;
+const {DATABASE_NAME, DATABASE_HOST,DATABASE_PORT } = process.env;
 
-const MONGODB_URI = `mongodb://mongo:${DATABASE_HOST}/${DATABASE_NAME}`;
+
+const MONGODB_URI =
+  process.env.NODE_ENV === 'production'
+    ? `mongodb://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`
+    : `mongodb://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`;
+
 
 const connectDB = async () => {
   try {
