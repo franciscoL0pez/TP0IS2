@@ -17,28 +17,45 @@ Este proyecto es una API RESTful desarrollada en Node.js con Express y MongoDB, 
 ---
 
 ## 🚀 Desafíos del Proyecto
-Uno de los mayores desafíos fue estructurar la aplicación bajo un enfoque de "package by layer" y garantizar que la API fuera fácilmente desplegable utilizando Docker. Además, implementar pruebas E2E con Jest y manejar transacciones en MongoDB mediante sesiones fue un reto significativo.
+El mayor desafio que tuve durante el proyecto fue aplicar una base de datos NoSql y docker, ya que no habia teniado expriencia usado ninguna de las dos. Sobre todo el uso de docker, ya que lo habia intentado antes de la clase y no podia conectar la api con la base de datos al principio, pero despues de realizar muchas pruebas (y leer bastante la docu) se logro. Al final decidi desplegar docker con un docker-compose para facilitar la creacion de la imagen y de los contenedores.
 
 ---
 
 ## 🔧 Pre-requisitos en caso de usarlo a nivel local
 Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-- **Node.js** (v18 o superior)
+- **Node.js** 
 - **npm** 
 - **Docker** y **Docker Compose**
-- **MongoDB** 
+- **MongoDB**
+- **Express**
+- **Dotenv**
+- **Winston**
 
-Para instalar dependencias, ejecuta:
+Para instalar dependencias, ejecutar:
 
 ```sh
-npm install
+npm install node
 ```
 
-O si usas yarn:
+```sh
+npm install express
+```
 
 ```sh
-yarn install
+npm i nodemon -D
+```
+
+```sh
+npm i mongoose
+```
+
+```sh
+npm i dotenv
+```
+
+```sh
+npm install winston
 ```
 
 ---
