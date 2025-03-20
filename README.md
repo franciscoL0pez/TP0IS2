@@ -21,11 +21,11 @@ Uno de los mayores desafíos fue estructurar la aplicación bajo un enfoque de "
 
 ---
 
-## 🔧 Pre-requisitos
+## 🔧 Pre-requisitos en caso de usarlo a nivel local
 Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
 - **Node.js** (v18 o superior)
-- **npm** o **yarn**
+- **npm** 
 - **Docker** y **Docker Compose**
 - **MongoDB** (puedes usar una instancia local o en contenedor)
 
@@ -59,36 +59,21 @@ npm test
 
 ## 🐳 Docker
 
-### 🔨 Construcción de la Imagen
-Para construir la imagen Docker del servicio, ejecuta:
+### 🔨 Construcción de la Imagen y los contenedores
+Para construir la imagen Docker del servicio y los contenedores de la base de datos y el server:
 
 ```sh
-docker build -t classconnect-api .
+docker compose build 
 ```
 
-### 🛢 Correr la Base de Datos
-Para levantar una instancia de MongoDB con Docker:
+### 🚀 Correr la Base de Datos
+Para levantar la imagen y conectar los contenedores creados:
 
 ```sh
-docker run -d --name mongodb -p 27017:27017 mongo
+docker compose up
 ```
 
-O si prefieres usar **Docker Compose**, crea un archivo `docker-compose.yml` y levántalo con:
-
-```sh
-docker-compose up -d
-```
-
-### 🚀 Correr la Imagen del Servicio
-Una vez construida la imagen, ejecuta:
-
-```sh
-docker run -d -p 7070:7070 --env-file .env classconnect-api
-```
-
-Si la API usa variables de entorno, asegúrate de tener un archivo `.env` con la configuración necesaria antes de ejecutar el contenedor.
-
----
+## 💻 Correr la
 
 ¡Listo! Ahora tu API debería estar corriendo en `http://localhost:7070`. 🚀
 
