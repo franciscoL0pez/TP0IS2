@@ -90,6 +90,17 @@ Para levantar todo:
 ```sh
 docker compose up
 ```
+# Para poder realizar cualquier operacion debemos ingresar a los contenedores
+
+Para listar nuestros contenedores:
+```sh
+docker ps
+```
+Para abrir una bash en alguno de nuestros contenedores:
+```sh
+docker exec -it <nombre_del_contenedor> bash
+```
+En el contenedor de "server" estara nuestra api y en el de "mongodb" nuestra base de datos, podremos ejecutar los test y interactuar con la db de manera normal.
 
 🗄️ Base de Datos
 
@@ -122,17 +133,9 @@ Mostar que hay dentro de ellas (en nuestro caso queremos ver courses):
 db.courses.find().pretty()
 ```
 
-Conectarnos a nuestra base de datos en especifico (en nuestro caso courses)
-
 🔹 Usando Docker
-
-Si prefieres correr MongoDB en un contenedor, puedes hacerlo con el siguiente comando:
-
-Esto creará un contenedor de MongoDB y lo ejecutará en el puerto 27017.
-
-```sh
-docker compose up
-```
+En el caso de usar docker se utilizar directamente la imagen "mongo" de dockerHub, por lo que una vez ejecutado el dockerCompose ya se podria acceder a la db.
+Para acceder al contenedor utilizaremos los pasos en la seccion de [Docker](#-docker) y una vez nos encontremos dentro podremos operar sobre la db.
 
 ## 💻 Correr la
 
