@@ -1,13 +1,14 @@
 
 # 📌 Tabla de Contenido
-1. [Introducción](#introducci%C3%B3n)
-2. [Desafíos del Proyecto](#desaf%C3%ADos-del-proyecto)
-3. [Pre-requisitos](#pre-requisitos)
-4. [Guía de Pruebas](#gu%C3%ADa-de-pruebas)
-5. [Docker](#docker)
-   - [Construcción de la Imagen y los containers](#construcci%C3%B3n-de-la-imagen)
-   - [Correr la Base de Datos](#correr-la-base-de-datos)
-   - [Correr la Imagen del Servicio](#correr-la-imagen-del-servicio)
+1. [Introducción](#-introducci%C3%B3n)
+2. [Desafíos del Proyecto](#-desaf%C3%ADos-del-proyecto)
+3. [Pre-requisitos](#-pre-requisitos-en-caso-de-usarlo-a-nivel-local)
+4. [Guía de Pruebas](#-gu%C3%ADa-de-pruebas)
+5. [Base de Datos](#-base-de-datos)
+6. [Docker](#-docker)
+   - [Construcción de la Imagen y los Contenedores](#-construcci%C3%B3n-de-la-imagen-y-los-contenedores)
+   - [Correr la Base de Datos](#-correr-la-base-de-datos)
+   - [Correr la Imagen del Servicio](#-correr-la-imagen-del-servicio)
 
 ---
 
@@ -85,9 +86,49 @@ Para construir la imagen Docker del servicio y los contenedores de la base de da
 ```sh
 docker compose build 
 ```
+Para levantar todo:
+```sh
+docker compose up
+```
 
-### 🚀 Correr la Base de Datos
-Para levantar la imagen y conectar los contenedores creados:
+🗄️ Base de Datos
+
+Utilice MongoDB como base de datos. Puedes ejecutarla de dos maneras:
+
+🔹 Usando una instalación local de MongoDB
+
+Estando a nivel local alcanza con tener instaladas las dependencias para que todos se ejecute correctamente. 
+Una vez iniciado la api podemos aplicar algunos comandos a nuestra db como:
+
+Conectarnos al gestor:
+```sh
+mongosh 
+```
+
+Mostrar nuestras bases de datos:
+```sh
+show databases
+```
+Acceder a una especifica (en nuestro caso coursesDB):
+```sh
+use coursesDB
+```
+Listar nuestras colleciones:
+```sh
+show collections
+```
+Mostar que hay dentro de ellas (en nuestro caso queremos ver courses):
+```sh
+db.courses.find().pretty()
+```
+
+Conectarnos a nuestra base de datos en especifico (en nuestro caso courses)
+
+🔹 Usando Docker
+
+Si prefieres correr MongoDB en un contenedor, puedes hacerlo con el siguiente comando:
+
+Esto creará un contenedor de MongoDB y lo ejecutará en el puerto 27017.
 
 ```sh
 docker compose up
