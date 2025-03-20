@@ -77,6 +77,14 @@ Para ver la cobertura del codigo:
 npm run testCoverage
 ```
 ---
+## 💻 Local
+Si queremos correr nuestra api a nivel local, una vez que tengamos todos los [Pre-requisitos](#-pre-requisitos-en-caso-de-usarlo-a-nivel-local) instalados ejecutamos:
+
+```sh
+npm start 
+```
+De esta forma se ejecutara el servidor en el puerto 8080 y conenctara nuestra base de datos, asi mismo abriendo otra terminal podremos operar sobre la db o
+utilizandos postman para testear.
 
 ## 🐳 Docker
 
@@ -100,6 +108,13 @@ Para abrir una bash en alguno de nuestros contenedores:
 ```sh
 docker exec -it <nombre_del_contenedor> bash
 ```
+
+Para poder detener el programa se creo un archivo make, utilizando el comando:
+```sh
+make docker-down
+```
+se detendra docker por completo.
+
 En el contenedor de "server" estara nuestra api y en el de "mongodb" nuestra base de datos, podremos ejecutar los test y interactuar con la db de manera normal.
 
 ## 🗄️ Base de Datos
@@ -135,10 +150,8 @@ db.courses.find().pretty()
 
 🔹 Usando Docker
 En el caso de usar docker se utilizar directamente la imagen "mongo" de dockerHub, por lo que una vez ejecutado el dockerCompose ya se podria acceder a la db.
-Para acceder al contenedor utilizaremos los pasos en la seccion de [Docker](#-docker) y una vez nos encontremos dentro podremos operar sobre la db.
+Para acceder al contenedor utilizaremos los pasos en la seccion de [Docker](#-docker) y una vez nos encontremos dentro podremos operar sobre la db con las mismas operaciones nombradas anteriormente.
 
-## 💻 Correr la
 
-¡Listo! Ahora tu API debería estar corriendo en `http://localhost:7070`. 🚀
 
 
