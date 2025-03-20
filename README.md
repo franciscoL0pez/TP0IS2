@@ -32,13 +32,13 @@ El mayor desafio que tuve durante el proyecto fue aplicar una base de datos NoSq
 ## 🔧 Pre-requisitos en caso de usarlo a nivel local
 Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-- **Node.js** 
-- **npm** 
-- **Docker** y **Docker Compose**
-- **MongoDB**
-- **Express**
-- **Dotenv**
-- **Winston**
+- **Node.js (v18.19.1)** 
+- **npm (9.2.0)** 
+- **Docker (28.0.1)** y **Docker Compose (v2.30.3)**
+- **MongoDB (v8.0.5)**
+- **Express (4.21.2)**
+- **Dotenv (16.4.7)**
+- **Winston (3.17.0)**
 
 Para instalar dependencias, ejecutar:
 
