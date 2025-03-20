@@ -4,13 +4,8 @@
 3. [Pre-requisitos](#pre-requisitos-en-caso-de-usarlo-a-nivel-local)  
 4. [Guía de Pruebas](#guia-de-pruebas)  
 5. [Base de Datos](#base-de-datos)  
-6. [Docker](#docker)  
+6. [Docker](#-docker)  
    - [Construcción de la Imagen y los Contenedores](#construccion-de-la-imagen-y-los-contenedores)  
-
----
-
-## 📌 Solucion planteada
-Este proyecto es una API RESTful desarrollada en Node.js con Express y MongoDB...
 
 ---
 
