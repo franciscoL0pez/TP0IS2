@@ -19,6 +19,9 @@ Como complemento, se creó un archivo Docker Compose para simplificar la creaci�
 Desarrollo, para ejecutar el proyecto de manera local.
 Producción, para ejecutarlo dentro de Docker.
 Ambos contienen todo lo necesario para la correcta configuracion de la base de datos y el servidor.
+
+
+
 ---
 
 ## 🚀 Desafíos del Proyecto
