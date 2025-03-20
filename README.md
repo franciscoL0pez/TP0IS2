@@ -90,7 +90,7 @@ Para levantar todo:
 ```sh
 docker compose up
 ```
-# Para poder realizar cualquier operacion debemos ingresar a los contenedores
+### Para poder realizar cualquier operacion debemos ingresar a los contenedores
 
 Para listar nuestros contenedores:
 ```sh
