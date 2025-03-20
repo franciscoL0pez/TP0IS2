@@ -25,7 +25,7 @@ Ambos contienen todo lo necesario para la correcta configuracion de la base de d
 ---
 
 ## 🚀 Desafíos del Proyecto
-El mayor desafio que tuve durante el proyecto fue aplicar una base de datos NoSql y docker, ya que no habia teniado expriencia usado ninguna de las dos. Sobre todo el uso de docker, ya que lo habia intentado antes de la clase y no podia conectar la api con la base de datos al principio, pero despues de realizar muchas pruebas (y leer bastante la docu) se logro. Al final decidi desplegar docker con un docker-compose para facilitar la creacion de la imagen y de los contenedores.
+El mayor desafio que tuve durante el proyecto fue aplicar una base de datos NoSql y docker, ya que no habia teniado experiencia usado ninguna de las dos. Sobre todo el uso de docker, ya que lo habia intentado antes de la clase y no podia conectar la api con los contenedor de la base de datos al principio, pero despues de realizar muchas pruebas (y leer bastante la docu) se logro. Al final decidi desplegar docker con un docker-compose para facilitar la creacion de la imagen, los contenedores y su conexion.
 
 ---
 
