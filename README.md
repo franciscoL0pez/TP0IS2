@@ -5,7 +5,8 @@
 4. [Guía de Pruebas](#-guia-de-pruebas)  
 5. [Base de Datos](#-base-de-datos)  
 6. [Docker](#-docker)  
-   - [Construcción de la Imagen y los Contenedores](#-construccion-de-la-imagen-y-los-contenedores)  
+   - [Construcción de la Imagen y los Contenedores](#-construccion-de-la-imagen-y-los-contenedores)
+7. [Postman](#-postman)
 
 ---
 
@@ -162,5 +163,16 @@ Para aplicar cualquier tipo de operacion crud en mongo podemos consultar: [Mongo
 En el caso de usar docker se utilizar directamente la imagen "mongo" de dockerHub, por lo que una vez ejecutado el dockerCompose ya se podria acceder a la db.
 Para acceder al contenedor utilizaremos los pasos en la seccion de [Docker](#-docker) y una vez nos encontremos dentro podremos operar sobre la db con las mismas operaciones nombradas anteriormente.
 
+## 📬 Postman
+En caso que se quiera testear la app mandado request por postman dejo los http correspondientes:
 
+Ejecucion local:
+```sh
+http://localhost:8080/api/courses
+```
+
+Ejecucion en docker:
+```sh
+http://localhost:3000/api/courses
+```
 
