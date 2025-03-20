@@ -1,6 +1,6 @@
 
 # 📌 Tabla de Contenido
-1. [Introducción](#-introducci%C3%B3n)
+1. [Solucion planteada](#-introducci%C3%B3n)
 2. [Desafíos del Proyecto](#-desaf%C3%ADos-del-proyecto)
 3. [Pre-requisitos](#-pre-requisitos-en-caso-de-usarlo-a-nivel-local)
 4. [Guía de Pruebas](#-gu%C3%ADa-de-pruebas)
