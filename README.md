@@ -12,9 +12,16 @@
 
 ---
 
-## 📌 Introducción
-Este proyecto es una API RESTful desarrollada en Node.js con Express y MongoDB, diseñada para la gestión de cursos en una plataforma educativa. La solución permite crear, leer, actualizar y eliminar cursos, siguiendo principios de buenas prácticas en arquitectura de software y pruebas automatizadas.
+## 📌 Solucion planteada
+Este proyecto es una API RESTful desarrollada en Node.js con Express y MongoDB, diseñada para la gestión de cursos en una plataforma educativa. La solución fue implementada conforme a la especificación de OpenAPI 3.0.
 
+Se aplicaron pruebas automatizadas, tanto unitarias como E2E, utilizando Jest, y se integró Docker para facilitar su despliegue. Además, se implementó un manejo de errores basado en RFC 7807 y una arquitectura organizada bajo el enfoque "package by layers". Para pruebas adicionales, se utilizó Postman.
+
+Como complemento, se creó un archivo Docker Compose para simplificar la creación y el lanzamiento de la API. También se definieron dos archivos .env que permiten configurar dos entornos diferenciados:
+
+Desarrollo, para ejecutar el proyecto de manera local.
+Producción, para ejecutarlo dentro de Docker.
+Ambos contienen todo lo necesario para la correcta configuracion de la base de datos y el servidor.
 ---
 
 ## 🚀 Desafíos del Proyecto
