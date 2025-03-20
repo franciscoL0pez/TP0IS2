@@ -457,3 +457,89 @@
 2025-03-19 21:51:35 info: Course deleted, id: 67db3c67d1e905698d6b582d
 2025-03-19 21:51:35 error: Course not found, id: 67d331989d439a57e9c008e1
 2025-03-19 21:51:35 error: Invalid ID: 123
+2025-03-19 18:53:00 info: Course created: 67db3cbc52925088f5dcc54f, Node.js
+2025-03-19 18:53:00 error: Title and description are required
+2025-03-19 18:53:00 info: Successfully retrieved all courses
+2025-03-19 18:53:00 info: Course found, id: 67db3cbc52925088f5dcc556
+2025-03-19 18:53:00 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-19 18:53:00 error: Invalid ID: 123
+2025-03-19 18:53:00 info: Course deleted, id: 67db3cbc52925088f5dcc55a
+2025-03-19 18:53:00 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-19 18:53:00 error: Invalid ID: 123
+2025-03-20 14:05:10 info: Successfully retrieved all courses
+2025-03-20 14:11:57 error: Title and description are required
+2025-03-20 14:11:57 info: Successfully retrieved all courses
+2025-03-20 14:11:57 info: Course found, id: 67dc222d755130ce1a1e8fcb
+2025-03-20 14:11:57 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 14:11:57 error: Invalid ID: 123
+2025-03-20 14:11:57 info: Course deleted, id: 67dc222d755130ce1a1e8fcf
+2025-03-20 14:11:57 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 14:11:57 error: Invalid ID: 123
+2025-03-20 14:19:14 info: Course deleted, id: 67dc0f0982939491ac1e7df2
+2025-03-20 11:20:09 info: Course created: 67dc2419dbcd200aa33b3ded, Node.js
+2025-03-20 11:20:09 error: Title and description are required
+2025-03-20 11:20:09 info: Successfully retrieved all courses
+2025-03-20 11:20:09 info: Course found, id: 67dc2419dbcd200aa33b3df4
+2025-03-20 11:20:09 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:20:09 error: Invalid ID: 123
+2025-03-20 11:20:09 info: Course deleted, id: 67dc2419dbcd200aa33b3df8
+2025-03-20 11:20:09 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:20:09 error: Invalid ID: 123
+2025-03-20 11:22:54 error: Title and description are required
+2025-03-20 11:22:54 info: Successfully retrieved all courses
+2025-03-20 11:22:54 info: Course found, id: 67dc24be596b9b135a2ff5ef
+2025-03-20 11:22:54 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:22:54 error: Invalid ID: 123
+2025-03-20 11:22:54 info: Course deleted, id: 67dc24be596b9b135a2ff5f3
+2025-03-20 11:22:54 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:22:54 error: Invalid ID: 123
+2025-03-20 11:23:01 error: Title and description are required
+2025-03-20 11:23:01 info: Successfully retrieved all courses
+2025-03-20 11:23:01 info: Course found, id: 67dc24c581742da383fc8c16
+2025-03-20 11:23:01 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:23:01 error: Invalid ID: 123
+2025-03-20 11:23:01 info: Course deleted, id: 67dc24c581742da383fc8c1a
+2025-03-20 11:23:01 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:23:01 error: Invalid ID: 123
+2025-03-20 14:24:45 error: Title and description are required
+2025-03-20 14:24:45 info: Successfully retrieved all courses
+2025-03-20 14:24:45 info: Course found, id: 67dc252d4020d30e83606351
+2025-03-20 14:24:45 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 14:24:45 error: Invalid ID: 123
+2025-03-20 14:24:45 info: Course deleted, id: 67dc252d4020d30e83606355
+2025-03-20 14:24:45 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 14:24:45 error: Invalid ID: 123
+2025-03-20 11:27:20 info: Course created: 67dc25c842d150b9479b2008, Node.js
+2025-03-20 11:27:20 error: Title and description are required
+2025-03-20 11:27:20 info: Successfully retrieved all courses
+2025-03-20 11:27:20 info: Course found, id: 67dc25c842d150b9479b200f
+2025-03-20 11:27:20 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:27:20 error: Invalid ID: 123
+2025-03-20 11:27:20 info: Course deleted, id: 67dc25c842d150b9479b2013
+2025-03-20 11:27:20 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:27:20 error: Invalid ID: 123
+2025-03-20 11:29:40 error: Title and description are required
+2025-03-20 11:29:41 info: Successfully retrieved all courses
+2025-03-20 11:29:41 info: Course found, id: 67dc2655d056e7556e11297c
+2025-03-20 11:29:41 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:29:41 error: Invalid ID: 123
+2025-03-20 11:29:41 info: Course deleted, id: 67dc2655d056e7556e112980
+2025-03-20 11:29:41 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 11:29:41 error: Invalid ID: 123
+2025-03-20 14:30:28 error: Title and description are required
+2025-03-20 14:30:28 info: Successfully retrieved all courses
+2025-03-20 14:30:28 info: Course found, id: 67dc268447bd2c7625a3e0c5
+2025-03-20 14:30:28 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 14:30:28 error: Invalid ID: 123
+2025-03-20 14:30:28 info: Course deleted, id: 67dc268447bd2c7625a3e0c9
+2025-03-20 14:30:28 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 14:30:28 error: Invalid ID: 123
+2025-03-20 14:30:37 error: Title and description are required
+2025-03-20 14:30:37 info: Successfully retrieved all courses
+2025-03-20 14:30:37 info: Course found, id: 67dc268dddedf1b206effa3e
+2025-03-20 14:30:37 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 14:30:37 error: Invalid ID: 123
+2025-03-20 14:30:37 info: Course deleted, id: 67dc268dddedf1b206effa42
+2025-03-20 14:30:37 error: Course not found, id: 67d331989d439a57e9c008e1
+2025-03-20 14:30:37 error: Invalid ID: 123
+2025-03-20 14:38:07 info: Successfully retrieved all courses

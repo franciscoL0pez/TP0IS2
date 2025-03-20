@@ -14,7 +14,7 @@ describe("E2E Tests - course API", () => {
 
   afterAll(async () => {
     await mongoose.connection.close();
-    app.close();
+    
   });
 
   beforeEach(async () => {
@@ -54,14 +54,24 @@ describe("E2E Tests - course API", () => {
   test("Creat a courses and Get all courses should return 200", async () => {
     await course.create({ title: "Node.js", description: "Learn Node.js" });
     await course.create({ title: "React", description: "Learn React" });
-
+    
     const response = await request(app).get("/api/courses");
-
+    
     expect(response.status).toBe(200);
-    expect(response.body.data[0].title).toBe("Node.js");
-    expect(response.body.data[0].description).toBe("Learn Node.js");
-
+    expect(response.body.data).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          title: "Node.js",
+          description: "Learn Node.js"
+        }),
+        expect.objectContaining({
+          title: "React",
+          description: "Learn React"
+        })
+      ])
+    );
   });
+
 
   test("Create and Get a course with id, return 200", async () => {
     const courseCreated = await course.create({
