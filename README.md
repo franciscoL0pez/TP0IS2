@@ -1,11 +1,17 @@
 # 📌 Tabla de Contenido
-1. [Solución planteada](#solución-planteada)  
-2. [Desafíos del Proyecto](#desafíos-del-proyecto)  
+1. [Solución planteada](#solucion-planteada)  
+2. [Desafíos del Proyecto](#desafios-del-proyecto)  
 3. [Pre-requisitos](#pre-requisitos-en-caso-de-usarlo-a-nivel-local)  
-4. [Guía de Pruebas](#guía-de-pruebas)  
+4. [Guía de Pruebas](#guia-de-pruebas)  
 5. [Base de Datos](#base-de-datos)  
 6. [Docker](#docker)  
-   - [Construcción de la Imagen y los Contenedores](#construcción-de-la-imagen-y-los-contenedores)  
+   - [Construcción de la Imagen y los Contenedores](#construccion-de-la-imagen-y-los-contenedores)  
+
+---
+
+## 📌 Solucion planteada
+Este proyecto es una API RESTful desarrollada en Node.js con Express y MongoDB...
+
 ---
 
 ## 📌 Solucion planteada
