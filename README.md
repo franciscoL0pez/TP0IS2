@@ -4,7 +4,7 @@
 2. [Desafíos del Proyecto](#-desafíos-del-proyecto)  
 3. [Pre-requisitos](#-pre-requisitos-en-caso-de-usarlo-a-nivel-local)  
 4. [Guía de Pruebas](#-guía-de-pruebas)  
-5. [Base de Datos](#-base-de-datos)  
+5. [Base de Datos](#-base-de-datos)
 6. [Docker](#-docker)  
    - [Construcción de la Imagen y los Contenedores](#-construcción-de-la-imagen-y-los-contenedores)  
 
