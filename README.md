@@ -102,7 +102,7 @@ docker exec -it <nombre_del_contenedor> bash
 ```
 En el contenedor de "server" estara nuestra api y en el de "mongodb" nuestra base de datos, podremos ejecutar los test y interactuar con la db de manera normal.
 
-🗄️ Base de Datos
+## 🗄️ Base de Datos
 
 Utilice MongoDB como base de datos. Puedes ejecutarla de dos maneras:
 
