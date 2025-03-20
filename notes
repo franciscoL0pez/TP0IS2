@@ -1,8 +1,0 @@
-1- Tecnologias: Node, JavaScript, mongoDB, express
-2- Instalar Node
-3- instalar express: npm install express
-4- instalar nodemon: npm i nodemon -D
-5- instalar mongoose: npm i mongoose
-6- instalar dotenv: npm i dotenv
-7- Postman para probar los endpoints
-8- Utilizo winston para los logs
