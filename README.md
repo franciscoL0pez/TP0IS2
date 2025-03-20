@@ -1,14 +1,13 @@
 
 # 📌 Tabla de Contenido
-1. [Solucion planteada](#-introducci%C3%B3n)
-2. [Desafíos del Proyecto](#-desaf%C3%ADos-del-proyecto)
-3. [Pre-requisitos](#-pre-requisitos-en-caso-de-usarlo-a-nivel-local)
-4. [Guía de Pruebas](#-gu%C3%ADa-de-pruebas)
-5. [Base de Datos](#-base-de-datos)
-6. [Docker](#-docker)
-   - [Construcción de la Imagen y los Contenedores](#-construcci%C3%B3n-de-la-imagen-y-los-contenedores)
-   - [Correr la Base de Datos](#-correr-la-base-de-datos)
-   - [Correr la Imagen del Servicio](#-correr-la-imagen-del-servicio)
+1. [Solución planteada](#-solución-planteada)  
+2. [Desafíos del Proyecto](#-desafíos-del-proyecto)  
+3. [Pre-requisitos](#-pre-requisitos-en-caso-de-usarlo-a-nivel-local)  
+4. [Guía de Pruebas](#-guía-de-pruebas)  
+5. [Base de Datos](#-base-de-datos)  
+6. [Docker](#-docker)  
+   - [Construcción de la Imagen y los Contenedores](#-construcción-de-la-imagen-y-los-contenedores)  
+
 
 ---
 
