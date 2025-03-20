@@ -1,5 +1,5 @@
 // Connect to the database and start the server
-const app = require("./config/server"); 
+const app = require("./config/server");
 const connectDB = require("./config/DBConnected");
 
 console.log("The envioromente is:", process.env.ENVIRONMENT);
