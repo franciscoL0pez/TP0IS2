@@ -12,7 +12,8 @@ services:
       - mongo
 
     volumes:
-      - .:/usr/src/app
+       - .:/usr/src/app         # Monta todo el directorio local
+       - /usr/src/app/node_modules  # Volumen separado para node_modules
 
     environment:
       - ENVIRONMENT=production
