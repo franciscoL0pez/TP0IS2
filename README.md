@@ -5,7 +5,7 @@
 3. [Pre-requisitos](#pre-requisitos)
 4. [Guía de Pruebas](#gu%C3%ADa-de-pruebas)
 5. [Docker](#docker)
-   - [Construcción de la Imagen](#construcci%C3%B3n-de-la-imagen)
+   - [Construcción de la Imagen y los containers](#construcci%C3%B3n-de-la-imagen)
    - [Correr la Base de Datos](#correr-la-base-de-datos)
    - [Correr la Imagen del Servicio](#correr-la-imagen-del-servicio)
 
@@ -27,7 +27,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado:
 - **Node.js** (v18 o superior)
 - **npm** 
 - **Docker** y **Docker Compose**
-- **MongoDB** (puedes usar una instancia local o en contenedor)
+- **MongoDB** 
 
 Para instalar dependencias, ejecuta:
 
@@ -49,12 +49,15 @@ Este proyecto utiliza **Jest** y **Supertest** para realizar pruebas E2E.
 - Documentación de Jest: [https://jestjs.io/docs/getting-started](https://jestjs.io/docs/getting-started)
 - Supertest: [https://github.com/visionmedia/supertest](https://github.com/visionmedia/supertest)
 
-Para ejecutar las pruebas, usa:
+Para ejecutar las pruebas tanto ejecucion a nivel local como utilizando los contonedores de docker:
 
 ```sh
 npm test
 ```
-
+Para ver la cobertura del codigo:
+```sh
+npm run testCoverage
+```
 ---
 
 ## 🐳 Docker
