@@ -19,9 +19,6 @@ Como complemento, se creó un archivo Docker Compose para simplificar la creaci�
 Desarrollo, para ejecutar el proyecto de manera local.
 Producción, para ejecutarlo dentro de Docker.
 Ambos contienen todo lo necesario para la correcta configuracion de la base de datos y el servidor.
-
-
-
 ---
 
 ## 🚀 Desafios del Proyecto
@@ -90,6 +87,8 @@ Si queremos correr nuestra api a nivel local, una vez que tengamos todos los [Pr
 ```sh
 npm start 
 ```
+Importante que, como se esta ignorando la carpeta node_modules con un gitignore tal vez pida instalar express.
+
 De esta forma se ejecutara el servidor en el puerto 8080 y conenctara nuestra base de datos, asi mismo abriendo otra terminal podremos operar sobre la db o
 utilizandos postman para testear.
 
