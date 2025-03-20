@@ -155,6 +155,7 @@ Mostar que hay dentro de ellas (en nuestro caso queremos ver courses):
 db.courses.find().pretty()
 ```
 Para aplicar cualquier tipo de operacion crud en mongo podemos consultar: [MongoDB](https://www.mongodb.com/es/resources/products/fundamentals/crud)
+
 🔹 Usando Docker
 En el caso de usar docker se utilizar directamente la imagen "mongo" de dockerHub, por lo que una vez ejecutado el dockerCompose ya se podria acceder a la db.
 Para acceder al contenedor utilizaremos los pasos en la seccion de [Docker](#-docker) y una vez nos encontremos dentro podremos operar sobre la db con las mismas operaciones nombradas anteriormente.
