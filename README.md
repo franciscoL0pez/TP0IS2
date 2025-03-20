@@ -126,7 +126,7 @@ En el contenedor de "server" estara nuestra api y en el de "mongodb" nuestra bas
 
 ## 🗄️ Base de Datos
 
-Utilice MongoDB como base de datos. Puedes ejecutarla de dos maneras:
+Puedes ejecutarse de dos maneras:
 
 🔹 Usando una instalación local de MongoDB
 
