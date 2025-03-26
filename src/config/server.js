@@ -18,7 +18,7 @@ if (fs.existsSync(envFile)) {
 }
 
 app.use(express.json());
-app.use("/api", courseRoutes);
+app.use(courseRoutes);
 
 app.get("/", (_, res) => {
   res.send("Welcome to my API");

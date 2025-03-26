@@ -1,7 +1,7 @@
 const courseService = require("../services/courseService");
 const createErrorResponse = require("../utils/errorResponse");
 const logger = require("../utils/logger");
-
+const validID = require("../utils/validID");
 /**
  * Handles the creation of a new course.
  *
@@ -107,8 +107,8 @@ const getCourses = async (req, res) => {
 const getCourseById = async (req, res) => {
   try {
     const { id } = req.params;
-
-    if (!id.match(/^[0-9a-fA-F]{24}$/)) {
+    
+    if (!validID(id)) {
       logger.error(`Invalid ID: ${id}`);
       return res
         .status(400)
@@ -177,7 +177,7 @@ const deleteCourse = async (req, res) => {
   try {
     const { id } = req.params;
 
-    if (!id.match(/^[0-9a-fA-F]{24}$/)) {
+    if (!validID(id)) {
       logger.error(`Invalid ID: ${id}`);
       return res
         .status(400)

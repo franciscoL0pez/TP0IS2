@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const { app } = require("../../main");
 const course = require("../../models/courses");
 const connectDB = require("../../config/DBConnected");
+const { log } = require("winston");
 
 
 describe("E2E Tests - course API", () => {
@@ -29,7 +30,7 @@ describe("E2E Tests - course API", () => {
 
   test("Create a course return 201", async () => {
     const response = await request(app)
-      .post("/api/courses")
+      .post("/courses")
       .send({ title: "Node.js", description: "Learn Node.js" });
 
     expect(response.status).toBe(201);
@@ -39,7 +40,7 @@ describe("E2E Tests - course API", () => {
 
   test("Create a course without title return 400", async () => {
     const response = await request(app)
-      .post("/api/courses")
+      .post("/courses")
       .send({ description: "Learn Node.js" });
 
     expect(response.body).toEqual({
@@ -55,7 +56,7 @@ describe("E2E Tests - course API", () => {
     await course.create({ title: "Node.js", description: "Learn Node.js" });
     await course.create({ title: "React", description: "Learn React" });
     
-    const response = await request(app).get("/api/courses");
+    const response = await request(app).get("/courses");
     
     expect(response.status).toBe(200);
     expect(response.body.data).toEqual(
@@ -79,7 +80,7 @@ describe("E2E Tests - course API", () => {
       description: "Learn Node.js",
     });
 
-    const response = await request(app).get(`/api/courses/${courseCreated.id}`);
+    const response = await request(app).get(`/courses/${courseCreated._id}`);
 
     expect(response.status).toBe(200);
     expect(response.body.data.title).toBe("Node.js");
@@ -88,20 +89,20 @@ describe("E2E Tests - course API", () => {
 
   test("Get a course with id not found return 404", async () => {
     const response = await request(app).get(
-      "/api/courses/67d331989d439a57e9c008e1"
+      "/courses/c615664e-e562-4fc0-9e70-a57c13bb1bb7"
     );
 
     expect(response.body).toEqual({
       type: "about:blank",
       title: "Course Not Found",
       status: 404,
-      detail: "The course with ID 67d331989d439a57e9c008e1 was not found.",
-      instance: "/courses/67d331989d439a57e9c008e1",
+      detail: "The course with ID c615664e-e562-4fc0-9e70-a57c13bb1bb7 was not found.",
+      instance: "/courses/c615664e-e562-4fc0-9e70-a57c13bb1bb7",
     });
   });
 
   test("Get a course with id invalid return 400", async () => {
-    const response = await request(app).get("/api/courses/123");
+    const response = await request(app).get("/courses/123");
 
     expect(response.body).toEqual({
       type: "about:blank",
@@ -119,28 +120,30 @@ describe("E2E Tests - course API", () => {
     });
 
     const response = await request(app).delete(
-      `/api/courses/${courseCreated.id}`
+      `/courses/${courseCreated._id}`
     );
+
+
 
     expect(response.status).toBe(204);
   });
 
-  test("Delete a course with id not found return 404", async () => {
+  test("Delete a course with id not found return 400", async () => {
     const response = await request(app).delete(
-      "/api/courses/67d331989d439a57e9c008e1"
+      "/courses/c615664e-e562-4fc0-9e70-a57c13bb1bb7"
     );
 
     expect(response.body).toEqual({
       type: "about:blank",
       title: "Course Not Found",
       status: 404,
-      detail: "The course with ID 67d331989d439a57e9c008e1 was not found.",
-      instance: "/courses/67d331989d439a57e9c008e1",
+      detail: "The course with ID c615664e-e562-4fc0-9e70-a57c13bb1bb7 was not found.",
+      instance: "/courses/c615664e-e562-4fc0-9e70-a57c13bb1bb7",
     });
   });
 
   test("Delete a course with id invalid return 400", async () => {
-    const response = await request(app).delete("/api/courses/123");
+    const response = await request(app).delete("/courses/123");
 
     expect(response.body).toEqual({
       type: "about:blank",
