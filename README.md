@@ -1,46 +1,45 @@
-# 📌 Tabla de Contenido
-1. [Solución planteada](#-solucion-planteada)  
-2. [Desafíos del Proyecto](#-desafios-del-proyecto)  
-3. [Pre-requisitos](#-pre-requisitos-en-caso-de-usarlo-a-nivel-local)  
-4. [Guía de Pruebas](#-guia-de-pruebas)  
-5. [Base de Datos](#-base-de-datos)  
+# 📌 Table of Contents
+1. [Proposed Solution](#-proposed-solution)  
+2. [Project Challenges](#-project-challenges)  
+3. [Prerequisites for Local Usage](#-prerequisites-for-local-usage)  
+4. [Testing Guide](#-testing-guide)  
+5. [Database](#-database)  
 6. [Docker](#-docker)  
-   - [Construcción de la Imagen y los Contenedores](#-construccion-de-la-imagen-y-los-contenedores)
+   - [Building the Image and Containers](#-building-the-image-and-containers)
 7. [Postman](#-postman)
 
 ---
 
-## 📌 Solucion planteada
-Este proyecto es una API RESTful desarrollada en Node.js con Express y MongoDB, diseñada para la gestión de cursos en una plataforma educativa. La solución fue implementada conforme a la especificación de OpenAPI 3.0.
+## 📌 Proposed Solution
+This project is a RESTful API developed in Node.js with Express and MongoDB, designed for course management in an educational platform. The solution was implemented according to the OpenAPI 3.0 specification.
 
-Se aplicaron pruebas automatizadas, tanto unitarias como E2E, utilizando Jest, y se integró Docker para facilitar su despliegue. Además, se implementó un manejo de errores basado en RFC 7807 y una arquitectura organizada bajo el enfoque "package by layers". Para pruebas adicionales, se utilizó Postman.
+Automated tests were applied, both unit and E2E, using Jest, and Docker was integrated to facilitate deployment. Additionally, error handling based on RFC 7807 was implemented along with an organized architecture under the "package by layers" approach. For additional testing, Postman was used.
 
-Como complemento, se creó un archivo Docker Compose para simplificar la creación y el lanzamiento de la API. También se definieron dos archivos .env que permiten configurar dos entornos diferenciados:
+As a complement, a Docker Compose file was created to simplify the creation and launch of the API. Two .env files were also defined that allow configuring two different environments:
 
-Desarrollo, para ejecutar el proyecto de manera local.
-Producción, para ejecutarlo dentro de Docker.
-Ambos contienen todo lo necesario para la correcta configuracion de la base de datos y el servidor, como se utilizan dos entornos distintos, se utilizaron dos bases de datos.
-
-
----
-
-## 🚀 Desafios del Proyecto
-El mayor desafio que tuve durante el proyecto fue aplicar una base de datos NoSql y docker, ya que no habia teniado experiencia usado ninguna de las dos. Sobre todo el uso de docker, ya que lo habia intentado antes de la clase y no podia conectar la api con los contenedor de la base de datos al principio, pero despues de realizar muchas pruebas (y leer bastante la docu) se logro. Al final decidi desplegar docker con un docker-compose para facilitar la creacion de la imagen, los contenedores y su conexion.
+Development, to run the project locally.
+Production, to run it within Docker.
+Both contain everything necessary for the correct configuration of the database and server. Since two different environments are used, two databases were utilized.
 
 ---
 
-## 🔧 Pre-requisitos en caso de usarlo a nivel local
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
+## 🚀 Project Challenges
+The biggest challenge I had during the project was implementing a NoSQL database and Docker, since I had no previous experience using either of them. Especially using Docker, as I had tried it before the class and couldn't connect the API with the database container at first, but after performing many tests (and reading a lot of documentation) it was achieved. In the end, I decided to deploy Docker with a docker-compose to facilitate the creation of the image, containers, and their connection.
+
+---
+
+## 🔧 Prerequisites for Local Usage
+Before running the project, make sure you have installed:
 
 - **Node.js (v18.19.1)** 
 - **npm (9.2.0)** 
-- **Docker (28.0.1)** y **Docker Compose (v2.30.3)**
+- **Docker (28.0.1)** and **Docker Compose (v2.30.3)**
 - **MongoDB (v8.0.5)**
 - **Express (4.21.2)**
 - **Dotenv (16.4.7)**
 - **Winston (3.17.0)**
 
-Para instalar dependencias, ejecutar:
+To install dependencies, run:
 
 ```sh
 npm install node
@@ -68,111 +67,109 @@ npm install winston
 
 ---
 
-## 📌 Guia de Pruebas
-Este proyecto utiliza **Jest** y **Supertest** para realizar pruebas E2E.
+## 📌 Testing Guide
+This project uses **Jest** and **Supertest** to perform E2E tests.
 
-- Documentación de Jest: [https://jestjs.io/docs/getting-started](https://jestjs.io/docs/getting-started)
+- Jest Documentation: [https://jestjs.io/docs/getting-started](https://jestjs.io/docs/getting-started)
 - Supertest: [https://github.com/visionmedia/supertest](https://github.com/visionmedia/supertest)
 
-Para ejecutar las pruebas tanto ejecucion a nivel local como utilizando los contonedores de docker:
+To run tests both locally and using Docker containers:
 
 ```sh
 npm test
 ```
-Para ver la cobertura del codigo:
+To see code coverage:
 ```sh
 npm run testCoverage
 ```
 ---
 ## 💻 Local
-Si queremos correr nuestra api a nivel local, una vez que tengamos todos los [Pre-requisitos](#-pre-requisitos-en-caso-de-usarlo-a-nivel-local) instalados ejecutamos:
+If we want to run our API locally, once we have all the [Prerequisites](#-prerequisites-for-local-usage) installed, we execute:
 
 ```sh
 npm start 
 ```
-Importante que, como se esta ignorando la carpeta node_modules con un gitignore tal vez pida instalar express.
+Important note: since the node_modules folder is being ignored with gitignore, it might ask to install express.
 
-De esta forma se ejecutara el servidor en el puerto 8080 y conenctara nuestra base de datos, asi mismo abriendo otra terminal podremos operar sobre la db o
-utilizandos postman para testear.
+This way the server will run on port 8080 and connect to our database. Similarly, by opening another terminal we can operate on the db or use Postman for testing.
 
 ## 🐳 Docker
 
-### 🔨 Construcción de la Imagen y los contenedores
-Para construir la imagen Docker del servicio y los contenedores de la base de datos y el server:
+### 🔨 Building the Image and Containers
+To build the Docker image of the service and the database and server containers:
 
 ```sh
 docker compose build 
 ```
-Para levantar todo:
+To start everything:
 ```sh
 docker compose up
 ```
-### Para poder realizar cualquier operacion debemos ingresar a los contenedores
+### To perform any operation we must enter the containers
 
-Para listar nuestros contenedores:
+To list our containers:
 ```sh
 docker ps
 ```
-Para abrir una bash en alguno de nuestros contenedores:
+To open a bash in one of our containers:
 ```sh
-docker exec -it <nombre_del_contenedor> bash
+docker exec -it <container_name> bash
 ```
 
-Para poder detener el programa se creo un archivo make, utilizando el comando:
+To stop the program, a make file was created, using the command:
 ```sh
 make docker-down
 ```
-se detendra docker por completo.
+will stop Docker completely.
 
-En el contenedor de "server" estara nuestra api y en el de "mongodb" nuestra base de datos, podremos ejecutar los test y interactuar con la db de manera normal.
+In the "server" container will be our API and in the "mongodb" container our database. We can run tests and interact with the db normally.
 
-## 🗄️ Base de Datos
+## 🗄️ Database
 
-Puedes ejecutarse de dos maneras:
+It can be executed in two ways:
 
-🔹 Usando una instalación local de MongoDB
+🔹 Using a local MongoDB installation
 
-Estando a nivel local alcanza con tener instaladas las dependencias para que todos se ejecute correctamente. 
-Una vez iniciado la api podemos aplicar algunos comandos a nuestra db como:
+Being at the local level, it's enough to have the dependencies installed for everything to run correctly. 
+Once the API is started, we can apply some commands to our db such as:
 
-Conectarnos al gestor:
+Connect to the manager:
 ```sh
 mongosh 
 ```
 
-Mostrar nuestras bases de datos:
+Show our databases:
 ```sh
 show databases
 ```
-Acceder a una especifica (en nuestro caso coursesDB):
+Access a specific one (in our case coursesDB):
 ```sh
 use coursesDB
 ```
-Listar nuestras colleciones:
+List our collections:
 ```sh
 show collections
 ```
-Mostar que hay dentro de ellas (en nuestro caso queremos ver courses):
+Show what's inside them (in our case we want to see courses):
 ```sh
 db.courses.find().pretty()
 ```
-Para aplicar cualquier tipo de operacion crud en mongo podemos consultar: [MongoDB](https://www.mongodb.com/es/resources/products/fundamentals/crud)
+To apply any type of CRUD operation in mongo we can consult: [MongoDB](https://www.mongodb.com/es/resources/products/fundamentals/crud)
 
-🔹 Usando Docker
+🔹 Using Docker
 
-En el caso de usar docker se utilizar directamente la imagen "mongo" de dockerHub, por lo que una vez ejecutado el dockerCompose ya se podria acceder a la db.
-Para acceder al contenedor utilizaremos los pasos en la seccion de [Docker](#-docker) y una vez nos encontremos dentro podremos operar sobre la db con las mismas operaciones nombradas anteriormente.
+In the case of using Docker, the "mongo" image from dockerHub is used directly, so once the dockerCompose is executed, the db could be accessed.
+To access the container we will use the steps in the [Docker](#-docker) section and once we are inside we can operate on the db with the same operations mentioned above.
 
 ## 📬 Postman
-En caso que se quiera testear la app mandado request por postman dejo los http correspondientes:
+In case you want to test the app by sending requests through Postman, here are the corresponding HTTP endpoints:
 
-Ejecucion local:
+Local execution:
 ```sh
 http://localhost:8080/api/courses
 ```
 
-Ejecucion en docker:
+Docker execution:
 ```sh
 http://localhost:3000/api/courses
 ```
-
